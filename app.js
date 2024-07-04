@@ -54,6 +54,18 @@ function addOrder() {
   total.value = "Total: PHP " + totalValue.toFixed(5);
 }
 function calculateChange() {
+   var items = [];
+   var totalCost = 0;
+    for (var i = 0; i < carts.length; i++) {
+        totalCost += carts[i].price * carts[i].quantity;
+    }
+   var cashPaid = parseFloat(cash.value);
+   var changeDue = cashPaid - totalCost;
+   Math.round(changeDue * 100) / 100;
+  change.textContent = "Change: $" + changeDue.toFixed(2);
+}
+
+
   var cashValue = parseFloat(cash.value);
   var changeValue;
   if (cashValue >= totalValue) {
