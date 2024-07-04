@@ -68,7 +68,7 @@ function calculateChange() {
   }
   change.value = "Change: PHP " + changeValue.toFixed(2);
 }
-
+}
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
