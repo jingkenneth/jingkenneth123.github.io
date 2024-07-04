@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Shop</title>
+    <title>E-commerce Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Simple Shop</h1>
-    <form id="shop-form">
-        <label for="quantity">Enter quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="0"><br><br>
-        <label for="price">Price per item:</label>
-        <input type="number" id="price" name="price" value="10"><br><br>
-        <label for="cash">Cash tendered:</label>
-        <input type="number" id="cash" name="cash" value="0"><br><br>
-        <button type="submit">Calculate Total</button>
-    </form>
-    <div id="result"></div>
+    <h1>E-commerce Website</h1>
+    <div id="shop-container">
+        <h2>Items</h2>
+        <ul id="items-list">
+            <li>Item 1: T-Shirt - $10.00</li>
+            <li>Item 2: Hoodie - $20.00</li>
+            <li>Item 3: Sneakers - $30.00</li>
+            <li>Item 4: Watch - $50.00</li>
+            <li>Item 5: Phone Case - $5.00</li>
+        </ul>
+        <form id="order-form">
+            <label for="items">Select items:</label>
+            <ul id="selected-items"></ul>
+            <label for="quantity">Enter quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1"><br><br>
+            <label for="cash">Cash tendered:</label>
+            <input type="number" id="cash" name="cash" value="0"><br><br>
+            <button type="submit">Place Order</button>
+            <div id="result"></div>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
