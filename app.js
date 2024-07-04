@@ -26,9 +26,8 @@ function addOrder() {
   }
   total.value = "Total: PHP " + totalValue.toFixed(2);
 }
-
 function calculateChange() {
-  cashValue = parseFloat(cash.value);
+  var cashValue = parseFloat(cash.value);
   var changeValue;
   if (cashValue >= totalValue) {
     changeValue = cashValue - totalValue;
@@ -36,14 +35,22 @@ function calculateChange() {
     changeValue = "Insufficient funds";
   }
   change.value = "Change: PHP " + changeValue.toFixed(2);
- }
+}
+function calculateChange() {
+  var cashValue = parseFloat(cash.value);
+  var changeValue;
+  if (cashValue >= totalValue) {
+    changeValue = cashValue - totalValue;
+  } else {
+    changeValue = "Insufficient funds";
+  }
+  change.value = "Change: PHP " + changeValue.toFixed(2);
+}
+
+
 }
 
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder);
 
 cash.addEventListener("input", calculateChange);
-cash.addEventListener("input", function() {
-  cashValue = parseFloat(cash.value);
-  calculateChange();
-});
