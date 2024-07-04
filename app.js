@@ -18,8 +18,8 @@ function calculateOrder() {
     change = 0;
   }
 
-  document.getElementById('total').value = "Total: $" + total.toFixed(2);
-  document.getElementById('change').value = "Change: $" + change.toFixed(2);
+  document.getElementById('total').value = "Total: P" + total.toFixed(2);
+  document.getElementById('change').value = "Change: P" + change.toFixed(2);
 }
 
 // Call the function when the quantity input fields change
