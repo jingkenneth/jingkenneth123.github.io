@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Online Shop</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Simple Shop</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Online Shop</h1>
-  <form id="shop-form">
-    <label for="product">Product:</label>
-    <select id="product-select" name="PET">
-      <input type="image" src="austrilian shepered.webp" alt="Submit" width="300" height="400">
-      <input type="image" src="golden retreiver.webp" alt="Submit" width="300" height="400">
-      <input type="image" src="golden retreiver.webp" alt="Submit" width="300" height="400">
-    </select>
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity-input" value="1">
-    <label for="cash-tendered">Cash Tendered:</label>
-    <input type="number" id="cash-tendered-input" value="0">
-    <button type="submit">Order</button>
-  </form>
-  <div id="order-output"></div>
+    <h1>Simple Shop</h1>
+    <form id="shop-form">
+        <label for="quantity">Enter quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="0"><br><br>
+        <label for="price">Price per item:</label>
+        <input type="number" id="price" name="price" value="10"><br><br>
+        <label for="cash">Cash tendered:</label>
+        <input type="number" id="cash" name="cash" value="0"><br><br>
+        <button type="submit">Calculate Total</button>
+    </form>
+    <div id="result"></div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
