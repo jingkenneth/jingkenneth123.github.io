@@ -51,8 +51,9 @@ function addOrder() {
     carts.textContent += order;
     totalValue += parseFloat(qty5.value) * parseFloat(price5.textContent);
   }
-  total.value = "Total: PHP " + totalValue.toFixed(2);
+  total.value = "Total: PHP " + totalValue.toFixed(5);
 }
+
 function calculateChange() {
   var cashValue = parseFloat(cash.value);
   var changeValue;
@@ -61,9 +62,9 @@ function calculateChange() {
   } else {
     changeValue = "Insufficient funds";
   }
-  change.value = "Change: PHP " + changeValue.toFixed(2);
+  change.value = "Change: PHP " + changeValue.toFixed(5);
 }
-}
+
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
