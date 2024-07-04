@@ -53,14 +53,9 @@ function addOrder() {
   }
   total.value = "Total: PHP " + totalValue.toFixed(2);
 }
-
-let changeValue;
-
 function calculateChange() {
-  cashValue = parseFloat(cash.value);
-  if (isNaN(cashValue)) {
-    cashValue = 0;
-  }
+  var cashValue = parseFloat(cash.value);
+  var changeValue;
   if (cashValue >= totalValue) {
     changeValue = cashValue - totalValue;
   } else {
