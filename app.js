@@ -10,7 +10,7 @@ function calculateTotal() {
     total += price * quantity;
   });
 
-  document.getElementById('total').value = "Total: $" + total.toFixed(2);
+  document.getElementById('total').value = "Total: pesos" + total.toFixed(2);
 }
 
 // Call the function when the quantity input fields change
