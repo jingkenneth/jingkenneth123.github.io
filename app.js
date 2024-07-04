@@ -53,6 +53,7 @@ function addOrder() {
   }
   total.value = "Total: PHP " + totalValue.toFixed(5);
 }
+
 function calculateChange() {
   var cashValue = parseFloat(cash.value);
   var changeValue;
@@ -63,7 +64,7 @@ function calculateChange() {
   }
   change.value = "Change: PHP " + changeValue.toFixed(5);
 }
-}
+
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
