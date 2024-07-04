@@ -63,6 +63,7 @@ function calculateChange() {
     changeValue = "Insufficient funds";
   }
   change.value = "Change: PHP " + changeValue.toFixed(5);
+  cash.addEventListener("input", calculateChange);
 }
 
 qty1.addEventListener("input", addOrder);
@@ -71,4 +72,4 @@ qty3.addEventListener("input", addOrder);
 qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
 
-cash.addEventListener("input", calculateChange);
+
