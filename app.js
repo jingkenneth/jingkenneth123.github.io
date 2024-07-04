@@ -26,6 +26,7 @@ function addOrder() {
   }
   total.value = "Total: PHP " + totalValue.toFixed(2);
 }
+
 function calculateChange() {
   var cashValue = parseFloat(cash.value);
   var changeValue;
@@ -35,19 +36,6 @@ function calculateChange() {
     changeValue = "Insufficient funds";
   }
   change.value = "Change: PHP " + changeValue.toFixed(2);
-}
-function calculateChange() {
-  var cashValue = parseFloat(cash.value);
-  var changeValue;
-  if (cashValue >= totalValue) {
-    changeValue = cashValue - totalValue;
-  } else {
-    changeValue = "Insufficient funds";
-  }
-  change.value = "Change: PHP " + changeValue.toFixed(2);
-}
-
-
 }
 
 qty1.addEventListener("input", addOrder);
