@@ -55,7 +55,7 @@ function addOrder() {
 }
 
 function calculateChange() {
-  var cashValue = parseFloat(cash.value);
+  var cashValue = parseInt(cash.value);
   var changeValue;
   if (cashValue >= totalValue) {
     changeValue = cashValue - totalValue;
