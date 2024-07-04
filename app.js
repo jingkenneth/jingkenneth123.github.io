@@ -24,6 +24,21 @@ function addOrder() {
     carts.textContent += order;
     totalValue += parseFloat(qty2.value) * parseFloat(price2.textContent);
   }
+  if (parseFloat(qty3.value) > 0) {
+    var order = qty3.value.toString() + ' pc/s x ' + price3.textContent + '------' + product3.textContent + '------PHP ' + (parseFloat(qty3.value) * parseFloat(price3.textContent)) + '\n';
+    carts.textContent += order;
+    totalValue += parseFloat(qty3.value) * parseFloat(price3.textContent);
+  }
+  if (parseFloat(qty4.value) > 0) {
+    var order = qty4.value.toString() + ' pc/s x ' + price4.textContent + '------' + product4.textContent + '------PHP ' + (parseFloat(qty4.value) * parseFloat(price4.textContent)) + '\n';
+    carts.textContent += order;
+    totalValue += parseFloat(qty4.value) * parseFloat(price4.textContent);
+  }
+  if (parseFloat(qty5.value) > 0) {
+    var order = qty5.value.toString() + ' pc/s x ' + price5.textContent + '------' + product5.textContent + '------PHP ' + (parseFloat(qty5.value) * parseFloat(price5.textContent)) + '\n';
+    carts.textContent += order;
+    totalValue += parseFloat(qty5.value) * parseFloat(price5.textContent);
+  }
   total.value = "Total: PHP " + totalValue.toFixed(2);
 }
 
@@ -39,6 +54,9 @@ function calculateChange() {
 }
 
 qty1.addEventListener("input", addOrder);
-qty2.addEventListener("input", addOrder);
+qty2.addEventListener("input", addOrder)
+qty3.addEventListener("input", addOrder);
+qty4.addEventListener("input", addOrder);
+qty5.addEventListener("input", addOrder);
 
 cash.addEventListener("input", calculateChange);
