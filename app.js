@@ -22,7 +22,6 @@ var carts = document.getElementById("carts");
 var total = document.getElementById("total");
 var cash = document.getElementById("cash");
 var change = document.getElementById("change");
-document.getElementById('cash').onkeyup = calculateChange;
 
 function addOrder() {
   carts.textContent = "";
@@ -54,15 +53,16 @@ function addOrder() {
   }
   total.value = "Total: PHP " + totalValue.toFixed(5);
 }
-
 function calculateChange() {
-            let totalAmount = parseFloat(total.value);
-            let cashTendered = parseFloat(cash.value);
-            if (!isNaN(cashTendered) && cashTendered >= totalAmount) {
-                change.value = (cashTendered - totalAmount).toFixed(2);
-            } else {
-                change.value = "";
-            }
+  var cashValue = parseFloat(cash.value);
+  var changeValue;
+  if (cashValue >= totalValue) {
+    changeValue = cashValue - totalValue;
+  } else {
+    changeValue = "Insufficient funds";
+  }
+  change.value = "Change: PHP " + changeValue.toFixed(5);
+}
 }
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
@@ -70,4 +70,4 @@ qty3.addEventListener("input", addOrder);
 qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
 
-
+cash.addEventListener("input", calculateChange);
