@@ -158,37 +158,11 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
   }
+   .product-grid > div {
+  background-color: #f7f7f7;
+}
 </style>
 
-<script>
-  const products = document.querySelectorAll('.product-grid > div');
-  
-  let currentIndex = 0;
-  
-  products.forEach((product, index) => {
-    product.addEventListener('touchstart', (e) => {
-      currentIndex = index;
-      console.log(`Selected product ${index + 1}`);
-    });
-  
-    product.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      const touchX = touch.clientX;
-      
-      if (touchX > products[currentIndex].getBoundingClientRect().left + products[currentIndex].offsetWidth / 2) {
-        currentIndex++;
-      } else if (touchX < products[currentIndex].getBoundingClientRect().left) {
-        currentIndex--;
-      }
-      
-      console.log(`Swiped to product ${currentIndex + 1}`);
-    });
-  
-    product.addEventListener('touchend', () => {
-      console.log(`Swiped to product ${currentIndex + 1}`);
-    });
-  });
-</script>
 </body>
 </html>
     </div>
