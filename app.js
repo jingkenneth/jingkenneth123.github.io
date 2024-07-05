@@ -77,24 +77,3 @@ qty3.addEventListener("input", addOrder);
 qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
 
- const products = document.querySelectorAll('.product-grid div');
- products.forEach((product) => {
-      const startX = e.touches[0].clientX;
-      const startY = e.touches[0].clientY;
-      const moveX = e.touches[0].clientX;
-      const moveY = e.touches[0].clientY;
-   
-        if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
-          
-        const direction = moveX > startX ? 'right' : 'left';
-        const distance = Math.abs(moveX - startX);
-        product.style.transform = `translateX(${distance}px)`;
-        setTimeout(() => {
-          product.style.transform = '';
-        }, 500);
-            }
-    });
-  });
-    product.addEventListener('touchstart', (e) => {
-    product.addEventListener('touchmove', (e) => {
-
