@@ -81,32 +81,5 @@ qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
 qty6.addEventListener("input", addOrder);
 
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slide');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-
-let currentSlide = 0;
-
-prevButton.addEventListener('click', () => {
-  currentSlide--;
-  if (currentSlide < 0) {
-    currentSlide = slides.length - 1;
-  }
-});
-
-nextButton.addEventListener('click', () => {
-  currentSlide++;
-  if (currentSlide >= slides.length) {
-    currentSlide = 0;
-  }
-});
-
-setInterval(() => {
-  currentSlide++;
-}, 3000); // Change slide every 3 seconds
-
-slider.style.transform = `translateX(${currentSlide * (-100)}%)`
-
 cash.addEventListener("keyup", calculateChange);
 
