@@ -81,34 +81,6 @@ qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
 qty6.addEventListener("input", addOrder
 
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
-
-  function prevSlide() {
-    currentSlide--;
-    if (currentSlide < 0) {
-      currentSlide = slides.length - 1;
-    }
-    updateSlide();
-  }
-
-  function nextSlide() {
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-      currentSlide = 0;
-    }
-    updateSlide();
-  }
-
-  function updateSlide() {
-    slides.forEach((slide, index) => {
-      if (index == currentSlide) {
-        slide.style.display = 'block';
-      } else {
-        slide.style.display = 'none';
-      }
-    });
-  }
       
 cash.addEventListener("keyup", calculateChange);
 
