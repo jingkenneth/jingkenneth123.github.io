@@ -51,7 +51,7 @@ function addOrder() {
     carts.textContent += order;
     totalValue += parseFloat(qty5.value) * parseFloat(price5.textContent);
   }
-  total.value = "Total: PHP " + totalValue.toFixed(5);
+  total.value = "Total: PHP " + totalValue.toFixed(2);
 }
 
 function calculateChange() {
