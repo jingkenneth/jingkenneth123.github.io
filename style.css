@@ -15,31 +15,10 @@ h2:hover {
   color: #999;
   transform: rotateY(180deg);
 }
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
-}
-
-.product {
-  background-color: #fff;
+.container {
+  max-width: calc(33.33% - 20px);
+  margin-bottom: 20px;
   padding: 20px;
-  border: 1px solid #ddd;
-}
-
-.product img {
-  width: 100%;
-  height: auto;
-}
-
-.product h2 {
-  font-size: 18px;
-}
-
-.product p {
-  font-size: 16px;
-}
-
-.product:hover {
-  box-shadow: rgba(0,0,0,0.1) 0px 0px 10px;
+  background-color: #fff;
+  border: none;
 }
