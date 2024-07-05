@@ -187,8 +187,7 @@
 }
       </style>
           <script>
-          // Get all the product elements
-const products = document.querySelectorAll('.product-grid > div');
+          const products = document.querySelectorAll('.product-grid > div');
 
 // Add event listener for product clicks
 products.forEach((product) => {
@@ -214,7 +213,14 @@ products.forEach((product) => {
 // Add event listener for quantity input changes
 products.forEach((product) => {
   const quantityInput = product.querySelector('input[type="number"]');
-  
+  quantityInput.addEventListener('input', (e) => {
+    // Get the quantity value
+    const quantity = parseInt(quantityInput.value, 10);
+
+    // Update the cart text
+    const cart = document.getElementById('carts');
+    cart.value = `${cart.value.split('\n')[0]} x${quantity}\n`;
+  });
 });
           </script>
 </body>
