@@ -56,14 +56,19 @@ function addOrder() {
 }
 
 function calculateChange() {
-  var cashValue = parseFloat(cash.value);
-  var changeValue;
-  if (cashValue >= totalValue) {
-    changeValue = cashValue - totalValue;
-  } else {
-    changeValue = "Insufficient funds";
-  }
-  change.value = "Change: PHP " + changeValue.toFixed(5);
+    const total = parseFloat(document.getElementById('total').value);
+    const cash = parseFloat(document.getElementById('cash').value);
+
+    if (isNaN(total) || isNaN(cash)) {
+        return;
+    }
+    const change = cash - total;
+
+    if (change < 0) {
+        document.getElementById('change').value = 'Insufficient cash provided';
+    } else {
+        document.getElementById('change').value = 'PHP ' + change.toFixed(2);
+    }
 }
 cash.addEventListener("input", calculateChange);
 
