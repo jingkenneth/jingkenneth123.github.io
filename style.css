@@ -15,10 +15,9 @@ h2:hover {
   color: #999;
   transform: rotateY(180deg);
 }
-.container {
-  max-width: calc(33.33% - 20px);
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #coral;
-  border: none;
-}
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+  }
