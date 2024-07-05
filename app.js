@@ -53,7 +53,6 @@ function addOrder() {
   }
   total.value = "Total: PHP " + totalValue.toFixed(2);
 }
-
 function calculateChange() {
     const total = parseFloat(document.getElementById('total').value);
     const cash = parseFloat(document.getElementById('cash').value);
@@ -71,9 +70,6 @@ function calculateChange() {
         document.getElementById('change').value = 'Insufficient cash provided';
     }
 }
-
-const cashInput = document.getElementById('cash');
-cash.addEventListener("input", calculateChange);
 
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
