@@ -59,9 +59,8 @@ function calculateChange() {
     const cash = parseFloat(document.getElementById('cash').value);
 
     if (isNaN(total) || isNaN(cash)) {
-        return; // Exit the function if either total or cash is not a valid number
+        return;
     }
-
     const change = cash - total;
 
     if (change >= 0) {
@@ -77,4 +76,24 @@ qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
 qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
+
+ const products = document.querySelectorAll('.product-grid div');
+products.forEach((product) => {
+    product.addEventListener('touchstart', (e) => {
+      const startX = e.touches[0].clientX;
+      const startY = e.touches[0].clientY;
+    product.addEventListener('touchmove', (e) => {
+      const moveX = e.touches[0].clientX;
+      const moveY = e.touches[0].clientY;
+        if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+        // Swipe detected! Calculate the direction and distance
+        const direction = moveX > startX ? 'right' : 'left';
+        const distance = Math.abs(moveX - startX);
+        product.style.transform = `translateX(${distance}px)`;
+        setTimeout(() => {
+          product.style.transform = '';
+        }, 500);
+            }
+    });
+  });
 
