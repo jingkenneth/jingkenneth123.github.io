@@ -1,37 +1,7 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.product {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: transform 0.2s;
-}
-
-.product:hover {
-    transform: scale(1.05);
-}
-
-.qty {
-    transition: border-color 0.3s;
-}
-
-.qty:focus {
-    border-color: #007bff;
-}
-
-.cart {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
 }
