@@ -128,8 +128,8 @@
     }
       </script>
           <style>
- box-sizing: border-box;  
-  margin: 2;  
+  box-sizing: border-box;  
+  margin: 0;  
   padding: 0;  
 }  
   
@@ -188,10 +188,7 @@ body {
   margin-bottom: 10px;  
 }  
   
-.carts-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.checkout-container {  
   max-width: 800px;  
   margin: 40px auto;  
   padding: 20px;  
@@ -200,25 +197,33 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
 }  
   
-.carts {  
+.checkout {  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: space-between;  
+}  
+  
+.checkout label {  
+  font-weight: bold;  
+  color: #00698f;  
+  margin-bottom: 10px;  
+}  
+  
+.checkout input[type="text"],.checkout textarea {  
   width: 100%;  
   padding: 10px;  
   margin-bottom: 10px;  
   border: 1px solid #ccc;  
-  resize: vertical;  
 }  
   
-#carts, #total, #cash, #change {  
-  font-size: 300px;  
-}  
-  
-#carts, #total, #cash {  
+.checkout input[type="number"] {  
+  width: 100%;  
   padding: 10px;  
   margin-bottom: 10px;  
   border: 1px solid #ccc;  
 }  
   
-#total, #change {  
+.checkout input[type="text"]:read-only,.checkout textarea:read-only {  
   background-color: #f0f0f0;  
   border: none;  
   padding: 10px;  
@@ -228,7 +233,7 @@ body {
   
 /* Responsive Design */  
 @media (max-width: 768px) {  
- .slider-container,.carts-container {  
+ .slider-container,.checkout-container {  
     max-width: 600px;  
   }  
  .slide {  
@@ -240,7 +245,7 @@ body {
 }  
   
 @media (max-width: 480px) {  
- .slider-container,.carts-container {  
+ .slider-container,.checkout-container {  
     max-width: 400px;  
   }  
  .slide {  
