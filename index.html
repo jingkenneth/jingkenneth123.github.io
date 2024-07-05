@@ -211,6 +211,35 @@
 }
     }
           </style>
+          <script>
+const sliderContainer = document.querySelector('.slider-container');  
+const slides = document.querySelectorAll('.slide');  
+const navBtns = document.querySelectorAll('.nav-btn');  
+  
+let currentSlide = 0;  
+  
+navBtns.forEach((btn, index) =&gt; {  
+  btn.addEventListener('click', () =&gt; {  
+    if (index === 0) {  
+      currentSlide--;  
+      if (currentSlide &lt; 0) {  
+        currentSlide = slides.length - 1;  
+      }  
+    } else {  
+      currentSlide++;  
+      if (currentSlide &gt;= slides.length) {  
+        currentSlide = 0;  
+      }  
+    }  
+    sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;  
+  });  
+});  
+  
+sliderContainer.addEventListener('scroll', () =&gt; {  
+  currentSlide = Math.round(sliderContainer.scrollLeft / sliderContainer.offsetWidth);  
+  sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;  
+});  
+          </script>
 </body>
 </html>
     </div>
