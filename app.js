@@ -55,21 +55,29 @@ function addOrder() {
 }
 
 function calculateChange() {
-  var cashValue = parseInt(cash.value);
-  var changeValue;
-  if (cashValue >= totalValue) {
-    changeValue = cashValue - totalValue;
-  } else {
-    changeValue = "Insufficient funds";
-  }
-  change.value = "Change: PHP " + changeValue.toFixed(5);
-  cash.addEventListener("input", calculateChange);
+    const total = parseFloat(document.getElementById('total').value);
+    const cash = parseFloat(document.getElementById('cash').value);
+
+    if (isNaN(total) || isNaN(cash)) {
+        return; // Exit the function if either total or cash is not a valid number
+    }
+
+    const change = cash - total;
+
+    if (change >= 0) {
+        document.getElementById('change').value = change.toFixed(2);
+    } else {
+        // If cash is less than the total, display an error message or handle it as needed
+        document.getElementById('change').value = 'Insufficient cash provided';
+    }
 }
+
+const cashInput = document.getElementById('cash');
+cash.addEventListener("input", calculateChange);
 
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
 qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
-
 
