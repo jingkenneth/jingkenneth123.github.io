@@ -132,23 +132,44 @@
             changeInput.value = "";
         }
     }
-let currentSlide = 1; // Keep track of the current slide
-
-function prevSlide() {
-    if (currentSlide > 6) {
-        document.getElementById('slide' + currentSlide).style.display = 'none';
-        currentSlide--;
-        document.getElementById('slide' + currentSlide).style.display = 'block';
-    }
+   <style>
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-function nextSlide() {
-    if (currentSlide < 6) { // Update this number if you add more slides
-        document.getElementById('slide' + currentSlide).style.display = 'none';
-        currentSlide++;
-        document.getElementById('slide' + currentSlide).style.display = 'block';
-    }
+.slider {
+    position: relative;
 }
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.prev-button,
+.next-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #00698f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-button {
+    margin-right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: #005377;
+}
+      </style>
       </script>
 </body>
 </html>
