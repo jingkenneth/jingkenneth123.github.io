@@ -190,7 +190,6 @@ body {
   color: #00698f;  
   margin-bottom: 10px;  
 }  
-  
 .checkout-container {  
   max-width: 800px;  
   margin: 40px auto;  
@@ -204,29 +203,43 @@ body {
   display: flex;  
   flex-wrap: wrap;  
   justify-content: space-between;  
+  padding: 20px;  
 }  
   
-.checkout label {  
+.checkout-field {  
+  flex: 1;  
+  margin: 10px;  
+  padding: 10px;  
+  border: 1px solid #ccc;  
+  border-radius: 5px;  
+  background-color: #f9f9f9;  
+}  
+  
+.checkout-field label {  
   font-weight: bold;  
   color: #00698f;  
   margin-bottom: 10px;  
 }  
   
-.checkout input[type="text"],.checkout textarea {  
+.checkout-field input[type="text"],.checkout-field textarea {  
   width: 100%;  
   padding: 10px;  
-  margin-bottom: 10px;  
-  border: 1px solid #ccc;  
+  font-size: 16px;  
+  border: none;  
+  border-radius: 5px;  
+  background-color: #f9f9f9;  
 }  
   
-.checkout input[type="number"] {  
+.checkout-field input[type="number"] {  
   width: 100%;  
   padding: 10px;  
-  margin-bottom: 10px;  
-  border: 1px solid #ccc;  
+  font-size: 16px;  
+  border: none;  
+  border-radius: 5px;  
+  background-color: #f9f9f9;  
 }  
   
-.checkout input[type="text"]:read-only,.checkout textarea:read-only {  
+.checkout-field input[type="text"]:read-only,.checkout-field textarea:read-only {  
   background-color: #f0f0f0;  
   border: none;  
   padding: 10px;  
@@ -234,6 +247,27 @@ body {
   color: #00698f;  
 }  
   
+#orders {  
+  flex: 2;  
+}  
+  
+#total, #cash, #change {  
+  flex: 1;  
+}  
+  
+/* Make the fields larger on larger screens */  
+@media (min-width: 768px) {  
+ .checkout-field {  
+    padding: 20px;  
+  }  
+ .checkout-field input[type="text"],.checkout-field textarea {  
+    font-size: 18px;  
+  }  
+ .checkout-field input[type="number"] {  
+    font-size: 18px;  
+  }  
+}  
+
 /* Responsive Design */  
 @media (max-width: 768px) {  
  .slider-container,.checkout-container {  
@@ -246,19 +280,6 @@ body {
     height: 150px;  
   }  
 }  
-  
-@media (max-width: 480px) {  
- .slider-container,.checkout-container {  
-    max-width: 400px;  
-  }  
- .slide {  
-    flex: 0 0 150px;  
-  }  
- .slide img {  
-    height: 100px;  
-  }  
-}  
-
           </style>
 </body>
 </html>
