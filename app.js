@@ -73,33 +73,6 @@ function calculateChange() {
   }
   change.value = "Change: PHP " + changeValue.toFixed(2);
 }
-const sliderContainer = document.querySelector('.slider-container');  
-const slides = document.querySelectorAll('.slide');  
-const prevButton = document.querySelector('.prev');  
-const nextButton = document.querySelector('.next');  
-  
-let currentSlide = 0;  
-  
-prevButton.addEventListener('click', () => {  
-  currentSlide--;  
-  updateSlider();  
-});  
-  
-nextButton.addEventListener('click', () => {  
-  currentSlide++;  
-  updateSlider();  
-});  
-  
-function updateSlider() {  
-  slides.forEach((slide, index) => {  
-    slide.classList.remove('active');  
-    if (index === currentSlide) {  
-      slide.classList.add('active');  
-    }  
-  });  
-  sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;  
-}  
-
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
