@@ -132,44 +132,32 @@
     }
       </script>
    <style>
-.slider-container {
+ .slider-container {
   position: relative;
 }
 
-.slider {
+.slides {
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-}
-
-.product-grid .row {
-  margin-bottom: 20px;
-}
-
-.product-grid .col-2 {
-  width: calc(33.33% - 10px);
-}
-
-.product-grid .col-2 img {
+.slide {
   width: 100%;
-  height: auto;
+  height: 300px; /* adjust height as needed */
 }
 
 .prev-button, .next-button {
   position: absolute;
-  top: calc(50% - 25px);
+  top: calc(50% - 15px);
 }
 
 .prev-button {
-  left: -30px;
+  left: 0;
 }
 
 .next-button {
-  right: -30px;
+  right: 0;
 }
 </style>
 </body>
