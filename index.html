@@ -186,42 +186,31 @@
   border-radius: 5px;
 }
       </style>
-          <script>
-          const products = document.querySelectorAll('.product-grid > div');
+ <script>
+ window.onload = function() {
+  const products = document.querySelectorAll('.product-grid > div');
+  const carts = document.getElementById('carts');
+  const cartCount = document.getElementById('cart-count');
 
-// Add event listener for product clicks
-products.forEach((product) => {
-  product.addEventListener('click', (e) => {
-    // Get the product ID
-    const productId = product.id;
+  products.forEach((product) => {
+    product.addEventListener('click', (e) => {
+      const productId = product.id;
+      const productName = document.getElementById(`product${productId} label span`).textContent;
+      const productPrice = document.getElementById(`price${productId}`).textContent;
 
-    // Get the product details
-    const productName = document.getElementById(`product${productId} label span`).textContent;
-    const productPrice = document.getElementById(`price${productId}`).textContent;
-
-    // Add the product to the cart
-    const cart = document.getElementById('carts');
-    const cartText = cart.value + `\n${productName} - ${productPrice}`;
-    cart.value = cartText;
-
-    // Update the cart count
-    const cartCount = document.getElementById('cart-count');
-    cartCount.textContent = `Items in cart: ${cart.value.split('\n').length}`;
+      carts.value += `\n${productName} - ${productPrice}`;
+      cartCount.textContent = `Items in cart: ${carts.value.split('\n').length}`;
+    });
   });
-});
 
-// Add event listener for quantity input changes
-products.forEach((product) => {
-  const quantityInput = product.querySelector('input[type="number"]');
-  quantityInput.addEventListener('input', (e) => {
-    // Get the quantity value
-    const quantity = parseInt(quantityInput.value, 10);
-
-    // Update the cart text
-    const cart = document.getElementById('carts');
-    cart.value = `${cart.value.split('\n')[0]} x${quantity}\n`;
+  products.forEach((product) => {
+    const quantityInput = product.querySelector('input[type="number"]');
+    quantityInput.addEventListener('input', (e) => {
+      const quantity = parseInt(quantityInput.value, 10);
+      carts.value = `${carts.value.split('\n')[0]} x${quantity}\n`;
+    });
   });
-});
+};
           </script>
 </body>
 </html>
