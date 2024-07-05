@@ -128,62 +128,44 @@
     }
       </script>
           <style>
-body {  
-    font-family: Arial, sans-serif;  
-    margin: 0;  
-    padding: 0;  
-}  
-  
-.container {  
-    max-width: 1200px;  
-    margin: 40px auto;  
-    padding: 20px;  
-    background-color: #f9f9f9;  
-    border: 1px solid #ddd;  
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
-}  
-  
-.row {  
-    display: flex;  
-    flex-wrap: wrap;  
-    justify-content: center;  
-}  
-  
-.col-12 {  
-    flex-basis: 100%;  
-    max-width: 100%;  
-}  
-  
-.text-center {  
-    text-align: center;  
-}  
-  
-.hr {  
-    border: none;  
-    border-top: 1px solid #ccc;  
-    margin: 20px 0;  
-}  
-  
+ 
 .slider-container {  
-    margin-top: 20px;  
+  margin-top: 20px;  
+  overflow: hidden; /* Add this to hide the overflow */  
 }  
   
 .slider {  
-    display: flex;  
-    flex-wrap: wrap;  
-    justify-content: center;  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: center;  
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth sliding */  
 }  
   
 .slide {  
-    margin: 20px;  
-    width: 300px;  
-    background-color: #fff;  
-    border: 1px solid #ddd;  
-    padding: 20px;  
-    box-shadow: 0 0 ;
-}
-}
-
+  margin: 20px;  
+  width: 300px;  
+  background-color: #fff;  
+  border: 1px solid #ddd;  
+  padding: 20px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}  
+  
+/* Add Swiper.js styles */  
+.swiper-slide {  
+  width: 300px; /* Set the slide width */  
+  height: 100%; /* Set the slide height */  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  font-size: 18px;  
+  font-weight: bold;  
+  color: #333;  
+  background-color: #fff;  
+  border: 1px solid #ddd;  
+  padding: 20px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}  
+             }
              </style>
 </body>
 </html>
