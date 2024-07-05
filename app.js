@@ -1,3 +1,20 @@
+ import Swiper from 'wiper';    
+const swiper = new Swiper('.slider', {  
+  direction: 'horizontal',  
+  loop: true,  
+  slidesPerView: 1,  
+  spaceBetween: 20,  
+  pagination: {  
+    el: '.swiper-pagination',  
+    clickable: true,  
+  },  
+  navigation: {  
+    nextEl: '.swiper-button-next',  
+    prevEl: '.swiper-button-prev',  
+  },  
+});  
+
+
 var product1 = document.getElementById("product1");
 var qty1 = document.getElementById("qty1");
 var price1 = document.getElementById("price1");
