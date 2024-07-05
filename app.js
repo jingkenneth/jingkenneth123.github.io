@@ -73,13 +73,46 @@ function calculateChange() {
   }
   change.value = "Change: PHP " + changeValue.toFixed(2);
 }
+const slider = document.querySelector('.slider-container');
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+let currentSlide = 0;
+
+prevButton.addEventListener('click', () => {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  currentSlide++;
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+});
+
+setInterval(() => {
+  currentSlide++;
+}, 3000); // change slide every few seconds
+
+slides.forEach((slide, index) => {
+  slide.style.transform = `translateX(${index * (-100)}%)`;
+});
+  });
+});
 
 qty1.addEventListener("input", addOrder);
 qty2.addEventListener("input", addOrder)
 qty3.addEventListener("input", addOrder);
 qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
-qty6.addEventListener("input", addOrder);
+qty6.addEventListener("input", addOrder
+
+slides.forEach((slide) => {
+slide.addEventListener('click', () => {
+currentSlide = Array.prototype.indexOf.call(slides, slide);
 
 cash.addEventListener("keyup", calculateChange);
 
