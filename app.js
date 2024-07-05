@@ -78,15 +78,14 @@ qty4.addEventListener("input", addOrder);
 qty5.addEventListener("input", addOrder);
 
  const products = document.querySelectorAll('.product-grid div');
-products.forEach((product) => {
-    product.addEventListener('touchstart', (e) => {
+ products.forEach((product) => {
       const startX = e.touches[0].clientX;
       const startY = e.touches[0].clientY;
-    product.addEventListener('touchmove', (e) => {
       const moveX = e.touches[0].clientX;
       const moveY = e.touches[0].clientY;
+   
         if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
-        // Swipe detected! Calculate the direction and distance
+          
         const direction = moveX > startX ? 'right' : 'left';
         const distance = Math.abs(moveX - startX);
         product.style.transform = `translateX(${distance}px)`;
@@ -96,4 +95,6 @@ products.forEach((product) => {
             }
     });
   });
+    product.addEventListener('touchstart', (e) => {
+    product.addEventListener('touchmove', (e) => {
 
