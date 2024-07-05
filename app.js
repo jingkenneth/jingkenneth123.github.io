@@ -55,20 +55,17 @@ function addOrder() {
   total.value = "Total: PHP " + totalValue.toFixed(2);
 }
 
-function calculateChange() {
-    const total = parseFloat(document.getElementById('total').value);
-    const cash = parseFloat(document.getElementById('cash').value);
-
-    if (isNaN(total) || isNaN(cash)) {
-        return;
+function calculateChange(cash, total) {
+    if (isNaN(cash) || isNaN(total)) {
+        return 'Invalid input';
     }
-    const change = cash - total;
 
-    if (change < 0) {
-        document.getElementById('change').value = 'Insufficient cash provided';
-    } else {
-        document.getElementById('change').value = 'PHP ' + change.toFixed(2);
+    if (cash < total) {
+        return 'Insufficient cash provided';
     }
+
+    let change = cash - total;
+    return `PHP ${change.toFixed(2)}`;
 }
 cash.addEventListener("input", calculateChange);
 
