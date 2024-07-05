@@ -132,6 +132,23 @@
             changeInput.value = "";
         }
     }
+let currentSlide = 1; // Keep track of the current slide
+
+function prevSlide() {
+    if (currentSlide > 1) {
+        document.getElementById('slide' + currentSlide).style.display = 'none';
+        currentSlide--;
+        document.getElementById('slide' + currentSlide).style.display = 'block';
+    }
+}
+
+function nextSlide() {
+    if (currentSlide < 6) { // Update this number if you add more slides
+        document.getElementById('slide' + currentSlide).style.display = 'none';
+        currentSlide++;
+        document.getElementById('slide' + currentSlide).style.display = 'block';
+    }
+}
       </script>
 </body>
 </html>
