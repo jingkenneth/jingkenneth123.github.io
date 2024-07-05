@@ -10,3 +10,6 @@ h2 {
   font-weight: bold;
   text-align: center;  text-shadow: 0 0 10px rgba(255, 105, 180, 1);  color: rgba(255, 105, 180, 0.5); 
 }
+h2:hover {
+  color: #999;
+}
