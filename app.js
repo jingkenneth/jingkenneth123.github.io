@@ -82,3 +82,27 @@ qty5.addEventListener("input", addOrder);
 qty6.addEventListener("input", addOrder);
 
 cash.addEventListener("keyup", calculateChange);
+window.onload = function() {
+  const products = document.querySelectorAll('.product-grid > div');
+  const carts = document.getElementById('carts');
+  const cartCount = document.getElementById('cart-count');
+
+  products.forEach((product) => {
+    product.addEventListener('click', (e) => {
+      const productId = product.id;
+      const productName = document.getElementById(`product${productId} label span`).textContent;
+      const productPrice = document.getElementById(`price${productId}`).textContent;
+
+      carts.value += `\n${productName} - ${productPrice}`;
+      cartCount.textContent = `Items in cart: ${carts.value.split('\n').length}`;
+    });
+  });
+
+  products.forEach((product) => {
+    const quantityInput = product.querySelector('input[type="number"]');
+    quantityInput.addEventListener('input', (e) => {
+      const quantity = parseInt(quantityInput.value, 10);
+      carts.value = `${carts.value.split('\n')[0]} x${quantity}\n`;
+    });
+  });
+};
