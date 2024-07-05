@@ -9,10 +9,6 @@ h2 {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-}
-
-h2::first-letter {
-  float: left;
-  font-size: x-large;
-  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 1);
+  color: rgba(255, 105, 180, 0.5); 
 }
