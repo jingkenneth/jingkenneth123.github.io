@@ -134,31 +134,34 @@
    <style>
 .slider-container {
   position: relative;
-  width: 100%;
 }
 
 .slider {
   position: relative;
-  overflow: hidden;
 }
 
-.slide {
-  position: relative;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.product-grid .row {
+  margin-bottom: 20px;
+}
+
+.product-grid .col-2 {
+  width: calc(33.33% - 10px);
+}
+
+.product-grid .col-2 img {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.slide img {
-  width: 500px;
-  height: 300px;
+  height: auto;
 }
 
 .prev-button, .next-button {
   position: absolute;
   top: calc(50% - 25px);
-  z-index: 1;
 }
 
 .prev-button {
@@ -167,12 +170,6 @@
 
 .next-button {
   right: -30px;
-}
-
-.cart-area {
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 175px);
 }
       </style>
 </body>
