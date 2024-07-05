@@ -186,6 +186,37 @@
   border-radius: 5px;
 }
       </style>
+          <script>
+          // Get all the product elements
+const products = document.querySelectorAll('.product-grid > div');
+
+// Add event listener for product clicks
+products.forEach((product) => {
+  product.addEventListener('click', (e) => {
+    // Get the product ID
+    const productId = product.id;
+
+    // Get the product details
+    const productName = document.getElementById(`product${productId} label span`).textContent;
+    const productPrice = document.getElementById(`price${productId}`).textContent;
+
+    // Add the product to the cart
+    const cart = document.getElementById('carts');
+    const cartText = cart.value + `\n${productName} - ${productPrice}`;
+    cart.value = cartText;
+
+    // Update the cart count
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = `Items in cart: ${cart.value.split('\n').length}`;
+  });
+});
+
+// Add event listener for quantity input changes
+products.forEach((product) => {
+  const quantityInput = product.querySelector('input[type="number"]');
+  
+});
+          </script>
 </body>
 </html>
     </div>
