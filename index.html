@@ -124,45 +124,57 @@
     }
       </script>
           <style>
-  .container {
-    position: relative;
-    overflow-x: scroll;
-    width: fit-content;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .product-grid > div {
-    width: calc(25% - 10px);
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .product-grid > div:hover {
-    transform: scale(1.05);
-  }
-  
-  .img-thumbnail {
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-   .product-grid > div {
-  background-color: #f7f7f7;
+ .selected {
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
-</style>
 
+.previous-selected {
+  box-shadow: none;
+}
+          </style>
+          <script>
+const products = document.querySelectorAll('.product-grid > div');
+let currentIndex = 0;
+products.forEach((product, index) => {
+  product.addEventListener('touchstart', (e) => {
+    currentIndex = index;
+  });
+});
+
+products.forEach((product, index) => {
+  product.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    const touchX = touch.clientX;
+
+    if (touchX > products[currentIndex].getBoundingClientRect().left + products[currentIndex].offsetWidth / 2) {
+      currentIndex++;
+    } else if (touchX < products[currentIndex].getBoundingClientRect().left) {
+      currentIndex--;
+    }
+  });
+});
+
+products.forEach((product, index) => {
+  product.addEventListener('touchend', () => {
+    console.log(`Swiped to product ${currentIndex + 1}`);
+  });
+});
+
+document.addEventListener('scroll', () => {
+  console.log(`Scrolled to product ${currentIndex + 1}`);
+});
+products[currentIndex].classList.add('selected');
+
+if (currentIndex > 0) {
+  products[currentIndex - 1].classList.remove('selected');
+}
+if (currentIndex > 0) {
+  products[currentIndex - 1].classList.add('previous-selected');
+}
+if (currentIndex > 0) {
+  products[currentIndex - 1].classList.remove('previous-selected');
+}
+ </script>
 </body>
 </html>
     </div>
