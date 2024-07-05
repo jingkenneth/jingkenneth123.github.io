@@ -15,3 +15,39 @@ h2:hover {
   color: #999;
   transform: rotateY(180deg
 }
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.prev-button,
+.next-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #00698f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-button {
+    margin-right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: #005377;
+}
