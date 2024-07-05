@@ -18,6 +18,7 @@ var product5 = document.getElementById("product5");
 var qty5 = document.getElementById("qty5");
 var price5 = document.getElementById("price5");
 
+
 var carts = document.getElementById("carts");
 var total = document.getElementById("total");
 var cash = document.getElementById("cash");
