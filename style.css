@@ -13,7 +13,13 @@ h2 {
 }
 h2:hover {
   color: #999;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding: 20px;
 }
  .carts {
   position: absolute;
