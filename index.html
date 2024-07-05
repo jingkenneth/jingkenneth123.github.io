@@ -39,7 +39,7 @@
                     <div class="col-4 text-center">
                     <label id="product4"><span style="font-weight:bold; color:#00698f">Ifinix zero 5G</span></label>
                     <img src="inifnix zero 5g-14999.jpg" style="width: 500px;height: 300px;" class="img-thumbnail"/><br>
-                    <label for="product4" id="price4">27000.00</label>
+                    <label for="product4" id="price4">11000.00</label>
                     <input type="number" class="form-control" id="qty4" placeholder="Enter quantity"/><br>
                 </div>
                     <div class="col-4 text-center">
@@ -63,6 +63,68 @@
        <div class="card text-center">
       <div class="card-footer text-body-secondary">
     <span style="font-weight:bold; color:#00698f">Jing kenneth ebio</span>
+          <div class="card text-center">      
+    </div>
+    </div>
+      <script>
+        var products = [
+        { id: 1, name: "Hot40i", price: 7289.00 },
+        { id: 2, name: "Infinix zero30", price: 14000.00 },
+        { id: 3, name: "Note40", price: 8999.00 },
+        { id: 4, name: "Infinix zero 5G", price: 11000.00 },
+        { id: 5, name: "Smart8", price: 2999.00 },
+        { id: 6, name: "Dallas", price: 300.00 },
+    ];
+    
+    
+    var qtyInputs = document.querySelectorAll('[id^="qty"]');
+    var carts = document.getElementById("carts");
+    var totalInput = document.getElementById("total");
+    var cashInput = document.getElementById("cash");
+    var changeInput = document.getElementById("change");
+    
+    
+    qtyInputs.forEach(function(qtyInput) {
+        qtyInput.addEventListener("input", addOrder);
+    });
+    
+    cashInput.addEventListener("input", calculateChange);
+    
+    
+    function addOrder() {
+        carts.textContent = ""; // Clear previous cart content
+    
+        var total = 0;
+    
+        qtyInputs.forEach(function(qtyInput, index) {
+            var qty = parseFloat(qtyInput.value);
+            if (qty > 0) {
+                var product = products[index];
+                var order = qty + " pcs x " + product.name + " - Php " + (qty * product.price).toFixed(2) + "\n";
+                carts.textContent += order;
+                total += qty * product.price;
+            }
+        });
+    
+        totalInput.value = total.toFixed(2); // Update total
+        calculateChange(); // Recalculate change
+    }
+    
+    
+    function calculateChange() {
+        var total = parseFloat(totalInput.value);
+        var cash = parseFloat(cashInput.value);
+    
+        if (!isNaN(total) && !isNaN(cash)) {
+            var change = cash - total;
+            changeInput.value = change.toFixed(2);
+        } else {
+            changeInput.value = "";
+        }
+    }
+      </script>
+</body>
+</html>
     </div>
     </div>
 </body>
