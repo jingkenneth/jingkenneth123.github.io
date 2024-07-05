@@ -5,3 +5,14 @@ body {
   color: #333;
   background-color: #blue;
 }
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2::first-letter {
+  float: left;
+  font-size: x-large;
+  font-weight: bolder;
+}
