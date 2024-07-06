@@ -130,42 +130,54 @@
           <style>
  
 .slider-container {  
-  margin-top: 20px;  
-  overflow: hidden; /* Add this to hide the overflow */  
+  position: relative;  
+  width: 100%;  
+  overflow: hidden;  
 }  
   
 .slider {  
   display: flex;  
-  flex-wrap: wrap;  
-  justify-content: center;  
-  transition: transform 0.3s ease-in-out; /* Add transition for smooth sliding */  
+  flex-wrap: nowrap;  
+  overflow-x: auto;  
+  padding: 20px;  
 }  
   
 .slide {  
-  margin: 20px;  
-  width: 300px;  
-  background-color: #fff;  
-  border: 1px solid #ddd;  
+  flex: 0 0 100%;  
+  margin: 10px;  
   padding: 20px;  
+  border: 1px solid #ddd;  
+  border-radius: 10px;  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
 }  
   
-/* Add Swiper.js styles */  
-.swiper-slide {  
-  width: 300px; /* Set the slide width */  
-  height: 100%; /* Set the slide height */  
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-  font-size: 18px;  
-  font-weight: bold;  
-  color: #333;  
-  background-color: #fff;  
-  border: 1px solid #ddd;  
-  padding: 20px;  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+.slider::-webkit-scrollbar {  
+  display: none;  
 }  
-             }
+  
+.slider {  
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}  
+  
+.slider:hover.slide {  
+  transform: scale(1.1);  
+  transition: transform 0.5s ease-in-out;  
+}  
+  
+.slider.slide:hover {  
+  transform: scale(1.1);  
+  transition: transform 0.5s ease-in-out;  
+}  
+  
+.slider.slide:not(:first-child) {  
+  margin-left: 20px;  
+}  
+  
+.slider.slide:last-child {  
+  margin-right: 20px;  
+}  
+}
              </style>
 </body>
 </html>
