@@ -2,6 +2,45 @@
 <html lang="en" data-bs-theme="dark">
    <title> infinix </title>
     <link rel="stylesheet" href="style.css">
+   <style>  
+ .slider-container {  
+    position: relative;  
+    width: 100%;  
+    overflow: hidden;  
+  }  
+ .slider {  
+    display: flex;  
+    flex-wrap: nowrap;  
+    overflow-x: auto;  
+    padding: 20px;  
+  }  
+ .slide {  
+    flex: 0 0 100%;  
+    margin: 10px;  
+    padding: 20px;  
+    border: 1px solid #ddd;  
+    border-radius: 10px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  }  
+ .slider::-webkit-scrollbar {  
+    display: none;  
+  }  
+ .slider {  
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }  
+ .slide:hover {  
+    transform: scale(1.1);  
+    transition: transform 0.5s ease-in-out;  
+  }  
+ .slide:not(:first-child) {  
+    margin-left: 20px;  
+  }  
+ .slide:last-child {  
+    margin-right: 20px;  
+  }  
+</style>  
+  
    <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -15,44 +54,68 @@
                 </div>
             </div>
         </div>
-                <div class="slider-container">
-                  <div class="slider">
-                  <div class="slide" id="slide1">
-                  <label id="product1"> <span style="font-weight:bold; color:#00698f">Hot40i</span></label>
-                  <img src="hot40i-7289.jpg" style="width: 500px;height: 300px;" class="img-thumbnail"/><br>
-                  <label for="product1" id="price1">7289.00</label>
-                  <input type="number" class="form-control" id="qty1" placeholder="Enter quantity"/><br>
-              </div>
-                  <div class="slide" id="slide2">
-                  <label id="product2"><span style="font-weight:bold; color:#00698f">Infinix zero30</span></label>
-                  <img src="infinix zero 30.jpg" style="width:500px;height: 300px;" class="img-thumbnail"/><br>
-                  <label for="product2" id="price2">14000.00</label>
-                  <input type="number" class="form-control" id="qty2" placeholder="Enter quantity"/><br>
-               </div>
-                  <div class="slide" id="slide3">
-                  <label id="product3"> <span style="font-weight:bold; color:#00698f">Note40</span></label>
-                  <img src="note40-v8999.jpg" style="width: 500px;height: 300px;" class="img-thumbnail"/><br>
-                  <label for="product3" id="price3">8999.00</label>
-                  <input type="number" class="form-control" id="qty3" placeholder="Enter quantity"/><br>
-              </div>
-                  <div class="slide" id="slide4">
-                  <label id="product4"><span style="font-weight:bold; color:#00698f">Infinix zero30</span></label>
-                  <img src="inifnix zero 5g-14999.jpg" style="width:500px;height: 300px;" class="img-thumbnail"/><br>
-                  <label for="product4" id="price4">11000.00</label>
-                  <input type="number" class="form-control" id="qty4" placeholder="Enter quantity"/><br>
-               </div>
-                  <div class="slide" id="slide5">
-                  <label id="product5"> <span style="font-weight:bold; color:#00698f">Smart8</span></label>
-                  <img src="smart8-2499..jpg" style="width: 500px;height: 300px;" class="img-thumbnail"/><br>
-                  <label for="product5" id="price5">2999.00</label>
-                  <input type="number" class="form-control" id="qty5" placeholder="Enter quantity"/><br>
-              </div>
-                  <div class="slide" id="slide6">
-                  <label id="product6"><span style="font-weight:bold; color:#00698f">Infinix Hot20s</span></label>
-                  <img src="infinixhot20s.jpg" style="width:500px;height: 300px;" class="img-thumbnail"/><br>
-                  <label for="product4" id="price6">4999.00</label>
-                  <input type="number" class="form-control" id="qty6" placeholder="Enter quantity"/><br>
-                  </div>
+               <div class="slider-container">  
+  <div class="slider">  
+    <div id="slide1" class="slide">  
+      <label id="product1">  
+        <span style="font-weight:bold; color:#00698f">Hot40i</span>  
+      </label>  
+      <img class="img-thumbnail" style="width: 500px;height: 300px;" src="hot40i-7289.jpg">  
+      <br>  
+      <label id="price1" for="product1">7289.00</label>  
+      <input placeholder="Enter quantity" id="qty1" class="form-control" type="number">  
+      <br>  
+    </div>  
+    <div id="slide2" class="slide">  
+      <label id="product2">  
+        <span style="font-weight:bold; color:#00698f">Infinix zero30</span>  
+      </label>  
+      <img class="img-thumbnail" style="width:500px;height: 300px;" src="infinix zero 30.jpg">  
+      <br>  
+      <label id="price2" for="product2">14000.00</label>  
+      <input placeholder="Enter quantity" id="qty2" class="form-control" type="number">  
+      <br>  
+    </div>  
+    <div id="slide3" class="slide">  
+      <label id="product3">  
+        <span style="font-weight:bold; color:#00698f">Note40</span>  
+      </label>  
+      <img class="img-thumbnail" style="width: 500px;height: 300px;" src="note40-v8999.jpg">  
+      <br>  
+      <label id="price3" for="product3">8999.00</label>  
+      <input placeholder="Enter quantity" id="qty3" class="form-control" type="number">  
+      <br>  
+    </div>  
+    <div id="slide4" class="slide">  
+      <label id="product4">  
+        <span style="font-weight:bold; color:#00698f">Infinix zero30</span>  
+      </label>  
+      <img class="img-thumbnail" style="width:500px;height: 300px;" src="inifnix zero 5g-14999.jpg">  
+      <br>  
+      <label id="price4" for="product4">11000.00</label>  
+      <input placeholder="Enter quantity" id="qty4" class="form-control" type="number">  
+      <br>  
+    </div>  
+    <div id="slide5" class="slide">  
+      <label id="product5">  
+        <span style="font-weight:bold; color:#00698f">Smart8</span>  
+      </label>  
+      <img class="img-thumbnail" style="width: 500px;height: 300px;" src="smart8-2499..jpg">  
+      <br>  
+      <label id="price5" for="product5">2999.00</label>  
+      <input placeholder="Enter quantity" id="qty5" class="form-control" type="number">  
+      <br>  
+    </div>  
+    <div id="slide6" class="slide">  
+      <label id="product6">  
+        <span style="font-weight:bold; color:#00698f">Infinix Hot20s</span>  
+      </label>  
+      <img class="img-thumbnail" style="width:500px;height: 300px;" src="infinixhot20s.jpg">  
+      <br>  
+      <label id="price6" for="product4">4999.00</label>  
+      <input placeholder="Enter quantity" id="qty6" class="form-control" type="number">  
+      <br>  
+    </div>  
                      <div class="col-4">
                      <label for="carts"><span style="font-weight:bold; color:#00698f"> Orders</span> </label><br>
                      <textarea class="form-control" rows="29" id="carts" cols="200" readonly style="width: 350px;height: 400px;font-size: 12px;"></textarea>
@@ -149,56 +212,7 @@ slider.addEventListener('click', (e) => {
 
       </script>
           <style>
- 
-.slider-container {  
-  position: relative;  
-  width: 100%;  
-  overflow: hidden;  
-}  
-  
-.slider {  
-  display: flex;  
-  flex-wrap: nowrap;  
-  overflow-x: auto;  
-  padding: 20px;  
-}  
-  
-.slide {  
-  flex: 0 0 100%;  
-  margin: 10px;  
-  padding: 20px;  
-  border: 1px solid #ddd;  
-  border-radius: 10px;  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
-}  
-  
-.slider::-webkit-scrollbar {  
-  display: none;  
-}  
-  
-.slider {  
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}  
-  
-.slider:hover.slide {  
-  transform: scale(1.1);  
-  transition: transform 0.5s ease-in-out;  
-}  
-  
-.slider.slide:hover {  
-  transform: scale(1.1);  
-  transition: transform 0.5s ease-in-out;  
-}  
-  
-.slider.slide:not(:first-child) {  
-  margin-left: 20px;  
-}  
-  
-.slider.slide:last-child {  
-  margin-right: 20px;  
-}  
-}
+
              </style>
 </body>
 </html>
