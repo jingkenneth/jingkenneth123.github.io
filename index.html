@@ -126,6 +126,27 @@
             changeInput.value = "";
         }
     }
+const slider = document.querySelector('.slider');  
+const slides = document.querySelectorAll('.slide');  
+  
+let currentSlide = 0;  
+  
+slider.addEventListener('scroll', () => {  
+  const scrollPosition = slider.scrollLeft;  
+  const slideWidth = slides.offsetWidth;  
+  currentSlide = Math.floor(scrollPosition / slideWidth);  
+  console.log(currentSlide);  
+});  
+  
+slider.addEventListener('click', (e) => {  
+  if (e.target.classList.contains('slide')) {  
+    const targetSlide = e.target;  
+    const targetIndex = Array.prototype.indexOf.call(slides, targetSlide);  
+    currentSlide = targetIndex;  
+    slider.scrollLeft = targetIndex * slideWidth;  
+  }  
+});  
+
       </script>
           <style>
  
