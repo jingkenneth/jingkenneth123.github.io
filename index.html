@@ -195,7 +195,8 @@ body {
 }  
   
 .carts-container {  
-  display: flex;    
+  display: flex; 
+  flex-direction: column;  
   align-items: flex-end;  
   max-width: 800px;  
   margin: 40px auto;  
@@ -254,6 +255,31 @@ body {
  .slide img {  
     height: 100px;  
   }  
+.order,.total,.cash,.change {  
+  display: inline-block;  
+  width: 25%;  
+  vertical-align: top;  
+  padding: 10px;  
+  border: 1px solid #ccc;  
+}  
+  
+.order {  
+  background-color: #f0f0f0;  
+}  
+  
+.total {  
+  font-weight: bold;  
+  color: #00698f;  
+}  
+  
+.cash {  
+  background-color: #f0f0f0;  
+}  
+  
+.change {  
+  font-weight: bold;  
+  color: #00698f;  
+}  
 }  
 
           </style>
